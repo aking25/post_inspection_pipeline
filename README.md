@@ -13,6 +13,8 @@ Set the following parameters in `nextflow.config`:
 * `aspera_folder`: folder to upload files to for SRA (*submit/Production*)
 * `bjorn_env`: path to bjorn conda environment
 
+Also set SRA-specific parameters, using `_` to replace any spaces.
+
 Then run the command: 
 ```
 nextflow run main.nf
