@@ -18,7 +18,10 @@ process PREP_SRA_FILES {
     cp !{params.bjorn_folder}/bam_inspect/* ${bam_folder}
     cp !{params.bjorn_folder}/bam_white/* ${bam_folder}
     prep_bam.py !{meta} ${bam_folder}
-    write_config.py !{meta} ${bam_folder}
+    write_config.py !{meta} ${bam_folder} !{params.instrument_model} !{params.first_name} \
+        !{params.last_name} !{params.email} !{params.organization} !{params.spuid_namespace} \
+        !{params.title} !{params.organism} !{params.organism_package} !{params.bioproject} \
+        !{params.library_layout}
     submit_ncbi.py job_config.json
     cp submission.xml $bam_folder
     '''
