@@ -1,5 +1,5 @@
 process PREP_SRA_FILES {
-    publishDir "${params.out_dir}", mode: 'copy', pattern: 'submission.xml'
+    publishDir "${params.out_dir}", mode: 'link', pattern: 'submission.xml'
     input:
     path meta
 
@@ -15,7 +15,7 @@ process PREP_SRA_FILES {
     ascp=!{params.aspera}
     ssh_key=!{params.ssh_key}
     mkdir -p $bam_folder
-    cp !{params.bjorn_folder}/bam_inspect/* ${bam_folder}
+    #cp !{params.bjorn_folder}/bam_inspect/* ${bam_folder}
     cp !{params.bjorn_folder}/bam_white/* ${bam_folder}
     prep_bam.py !{meta} ${bam_folder}
     write_config.py !{meta} ${bam_folder} !{params.instrument_model} !{params.first_name} \
@@ -29,7 +29,7 @@ process PREP_SRA_FILES {
 }
 
 process PREP_SRA_META {
-    publishDir "${params.out_dir}", mode: 'copy'
+    publishDir "${params.out_dir}", mode: 'link'
     input:
     val start
 
