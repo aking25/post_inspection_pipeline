@@ -62,8 +62,8 @@ meta_2 = pd.concat([has_both_fields, has_first_field, has_second_field, has_neit
 meta_3 = meta_2.drop(columns=["collected_by_1", "collected_by_2"])
 
 meta = meta_3[
-        (~meta_3["collected_by"].str.contains("Helix")) & (
-        ~meta_3["gisaid_accession"].isna())]
+        (~meta_3["collected_by"].str.contains("Helix"))]# & (
+        # ~meta_3["gisaid_accession"].isna())]
 # dump out the dataframe of sequences that need to be uploaded
 meta = meta.fillna("not collected")
 meta["collection_date"] = pd.to_datetime(meta["collection_date"]).dt.strftime('%Y-%m-%d')

@@ -15,8 +15,8 @@ process PREP_SRA_FILES {
     ascp=!{params.aspera}
     ssh_key=!{params.ssh_key}
     mkdir -p $bam_folder
-    #cp !{params.bjorn_folder}/bam_inspect/* ${bam_folder}
-    cp !{params.bjorn_folder}/bam_white/* ${bam_folder}
+    if [ "$(ls -A !{params.bjorn_folder}/bam_inspect/)" ]; then ln !{params.bjorn_folder}/bam_inspect/*.bam ${bam_folder}; fi
+    if [ "$(ls -A !{params.bjorn_folder}/bam_white/)" ]; then ln !{params.bjorn_folder}/bam_white/*.bam ${bam_folder}; fi
     prep_bam.py !{meta} ${bam_folder}
     write_config.py !{meta} ${bam_folder} !{params.instrument_model} !{params.first_name} \
         !{params.last_name} !{params.email} !{params.organization} !{params.spuid_namespace} \
