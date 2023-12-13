@@ -25,7 +25,6 @@ process PREP_SRA_FILES {
     submit_ncbi.py job_config.json
     cp submission.xml $bam_folder
     '''
-
 }
 
 process PREP_SRA_META {
