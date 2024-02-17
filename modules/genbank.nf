@@ -36,7 +36,7 @@ process ZIP_FILES {
     date = new Date().format("yyyy-MM-dd")
     '''
     submit_genbank.py -o ./ -f !{sequences} -s !{params.sbt_template} -x !{params.xml_template}
-    genbank_folder=!{params.out_dir}/genbank_!{date}
+    genbank_folder=!{params.out_dir}/genbank_!{params.out_folder}
     mkdir -p $genbank_folder
     cp *.zip $genbank_folder
     cp submission.xml $genbank_folder

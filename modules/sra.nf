@@ -11,7 +11,7 @@ process PREP_SRA_FILES {
     shell:
     date = new Date().format("yyyy-MM-dd")
     '''
-    bam_folder=!{params.out_dir}/ncbi_bam_!{date}
+    bam_folder=!{params.out_dir}/sra_!{params.out_folder}
     ascp=!{params.aspera}
     ssh_key=!{params.ssh_key}
     mkdir -p $bam_folder
