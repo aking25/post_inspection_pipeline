@@ -6,6 +6,7 @@ Set the following parameters in `nextflow.config`:
 * `bjorn_folder`: the output folder from running `run_alab_release.sh`
 * `ucsd_meta`: metadata from UCSD with zipcodes, leave as "" if not UCSD upload
 * `out_dir`: the output directory for NCBI SRA files
+* `out_folder`: output folder name
 * `bioproject`: bioproject for SRA upload
 * `metadata`: metadata of samples being uploaded (in `HCoV-19-Genomics` format)
 * `aspera`: directory containing ascp 
