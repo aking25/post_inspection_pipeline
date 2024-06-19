@@ -1,5 +1,5 @@
 # Post Inspection Processing Pipeline
-A Nextflow pipeline for uploading sequences to GISAID, Google Cloud, Github, and NCBI SRA after inspection.
+A Nextflow pipeline for uploading sequences to NCBI SRA and Genbank after inspection.
 
 ## Usage
 Set the following parameters in `nextflow.config`:
@@ -14,7 +14,7 @@ Set the following parameters in `nextflow.config`:
 * `aspera_folder`: folder to upload files to for SRA (*submit/Production*)
 * `bjorn_env`: path to bjorn conda environment
 
-Also set SRA-specific parameters, using `_` to replace any spaces.
+Also set NCBI-specific parameters, using `_` to replace any spaces.
 
 Then run the command: 
 ```

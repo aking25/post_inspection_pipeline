@@ -298,7 +298,7 @@ def submission_xml(action_type : str, config_template :str , submission_format_o
         format_biosample=False
     
    
-    submission_template_location = os.path.join("/home/chrissy/ncbi_batch_push","xml_package_template", config_template)
+    submission_template_location = os.path.join("/home/alab/data/ncbi_batch_push","xml_package_template", config_template)
     print(submission_template_location) 
     tree = et.parse(submission_template_location)
     root = tree.getroot() #submission level
@@ -614,7 +614,7 @@ def main():
             file_type, json_config)        
 
         #validates the xml file and returns any problem areas
-        results = validate("submission.xml", "/home/chrissy/ncbi_batch_push/xml_package_template/submission_verification.xsd", True)
+        results = validate("submission.xml", "/home/alab/data/ncbi_batch_push/xml_package_template/submission_verification.xsd", True)
         
         # sys.exit(0) 
         #connects via ftp to ncbi and uploads the files in the xml 

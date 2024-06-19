@@ -34,7 +34,7 @@ meta['bioproject_accession'] = bioproj
 # add vaccine_received = not collected
 meta['vaccine_received'] = 'not collected'
 
-author_conversions = pd.read_csv('/home/al/code/bjorn_utils/author_conversions.csv')
+author_conversions = pd.read_csv('/home/alab/code/bjorn_utils/author_conversions.csv')
 meta = meta.merge(author_conversions, how="left", left_on="collected_by_1", right_on="authors_original")
 meta = meta.drop(columns=["collected_by_1", "authors_original"])
 meta = meta.rename(columns={"authors_new": "collected_by_1"})
